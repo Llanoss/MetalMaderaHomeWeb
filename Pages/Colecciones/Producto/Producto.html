@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metal Madera Home</title>
+
+  <link rel="icon" href="/Images/Favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <nav class="site-navbar">
+    <button class="site-menu-toggle" id="menuToggle">☰</button>
+
+    <div class="site-logo">
+      <a href="/index.html">
+        <img src="/Images/Logos/LogoMMH.avif"
+             alt="Metal Madera Home Logo"
+             draggable="false">
+      </a>
+    </div>
+
+    <div class="site-spacer"></div>
+  </nav>
+</header>
+
+<!-- MENÚ PRINCIPAL -->
+<aside class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMainMenu">✕</button>
+  <h3 class="menu-title">Menu</h3>
+  <ul class="side-menu-links">
+    <li><a href="/index.html">Inicio</a></li>
+    <li class="divider"></li>
+    <li>
+            <button class="submenu-btn" id="openCollections">
+                     Colecciones <span class="arrow">❯</span>
+            </button>
+    </li>
+    <li class="divider"></li>
+    <li><a href="/Pages/Nosotros/Nosotros.html">Nosotros</a></li>
+    <li class="divider"></li>
+    <li><a href="/Pages/Contacto/Contacto.html">Contacto</a></li>
+  </ul>
+
+  <!-- Redes sociales solo en el primer menú -->
+    <div class="social-logos">
+        <a href="https://www.facebook.com/people/Metal-madera-home/61572745254082/?rdid=mbntyOCsVJYblgLl&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ftan3iZ1k%2F" target="_blank">
+            <img src="/Images/Logos/FaceLogo.avif" alt="Facebook">
+        </a>
+        <a href="https://instagram.com/metalmaderahome" target="_blank">
+            <img src="/Images/Logos/InstaLogo.avif" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@metal.madera.home" target="_blank">
+            <img src="/Images/Logos/TikTokLogo.avif" alt="TikTok">
+        </a>
+    </div>
+</aside>
+
+<!-- SUBMENÚ COLECCIONES -->
+<aside class="side-menu side-menu-secondary" id="collectionsMenu">
+    <button class="close-menu" id="closeCollections">✕</button>
+    <h3 class="menu-title">Colecciones</h3>
+    <ul class="side-menu-links">
+        <li><a href="/Pages/Colecciones/SillasYBancos/SillasYBancos.html">Sillas y Bancas</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Mesas/Mesas.html">Mesas</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Comedores/Comedores.html">Comedores</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Estructuras/Estructuras.html">Estructuras</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Artes/Artes.html">Arte</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/SoporteYMateras/SoportesYMateras.html">Soportes Para Materas</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Recibidores/Recibidores.html">Recibidores</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/Estanterias/Estanterias.html">Estanterías</a></li>
+        <li class="divider"></li>
+        <li><a href="/Pages/Colecciones/MesasBarra/MesasBarra.html">Mesas Barra</a></li>
+    </ul>
+</aside>
+
+<!-- =========================
+     CONTENIDO PRINCIPAL
+========================= -->
+<main>
+  <section class="detalle-container">
+
+    <!-- GALERÍA -->
+    <div class="galeria">
+      <div class="main-image-container">
+        <img src="/Images/Colecciones/Artes/fondo.avif"
+             alt="Producto Fondo"
+             class="main-image">
+      </div>
+
+      <div class="thumbnails-container">
+        <img src="/Images/Colecciones/Artes/fondo.avif" class="thumbnail active" alt="Producto Fondo">
+        <img src="/Images/Colecciones/Artes/fondo.avif" class="thumbnail" alt="Producto Blanco">
+      </div>
+    </div>
+
+    <!-- INFO DEL PRODUCTO -->
+    <div class="info">
+      <h3 class="marca">Metal Madera Home</h3>
+      <h2 class="producto">PRODUCTO</h2>
+      <h2 class="precio">PRECIO</h2>
+
+      <a class="btn-comprar"
+      href="https://wa.me/573222308558?text=Hola%2C%20estoy%20interesado%20en%20uno%20de%20sus%20productos!%20👋🏻"
+      target="_blank">
+      Compra Ahora !
+      </a>
+
+
+      <p class="descripcion">
+
+      </p>
+
+      <p class="descripcion">
+
+      </p>
+    </div>
+
+  </section>
+</main>
+
+<!-- =========================
+     CARRUSEL
+========================= -->
+<section class="section carrusel carrusel-producto">
+  <div class="container">
+    <div class="carousel-slider">
+
+      <div class="carousel-slide active">
+        <img src="/Images/Comprar/Compra01.avif" alt="Mueble Metal Madera">
+      </div>
+      <div class="carousel-slide">
+        <img src="/Images/Comprar/Compra02.avif" alt="Cliente satisfecho">
+      </div>
+      <div class="carousel-slide">
+        <img src="/Images/Comprar/Compra03.avif" alt="Detalle del mueble">
+      </div>
+      <div class="carousel-slide">
+        <img src="/Images/Comprar/Compra04.avif" alt="Uso del producto">
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-prev" aria-label="Anterior">&#10094;</button>
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="carousel-next" aria-label="Siguiente">&#10095;</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     GARANTÍA
+========================= -->
+<section class="garantia">
+  <h2>IMPORTANTE!</h2>
+  <p>
+    Las imágenes con fondo decorativo son solo ilustrativas y buscan mostrar el producto en un ambiente real. 
+    Para detalles exactos, ten en cuenta siempre la imagen con fondo blanco y las medidas indicadas en la descripción del producto. 😃🛠
+  </p>
+</section>
+
+<!-- MODAL ZOOM -->
+<div class="modal" id="imageModal">
+  <img class="modal-content" id="modalImage" alt="Vista ampliada del producto">
+</div>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-col footer-logo">
+      <img src="/Images/Logos/LogoMMH.avif" alt="Metal Madera Home">
+    </div>
+
+    <div class="footer-col footer-info">
+      <h3>Información</h3>
+      <div class="footer-links">
+        <a href="/Pages/Nosotros/Nosotros.html">Nosotros</a>
+        <a href="/Pages/Contacto/Contacto.html">Contacto</a>
+        <a href="/Pages/Politicas/Politicas.html">Nuestras Políticas</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-separator"></div>
+
+  <div class="footer-payments">
+    <img src="/Images/Logos/TarjetasLogo.avif" alt="Tarjetas">
+    <img src="/Images/Logos/NequiLogo.avif" alt="Nequi">
+    <img src="/Images/Logos/ConsigLogo.avif" alt="Consignación">
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 <span>Metal Madera Home</span> by Elkin Llanos</p>
+  </div>
+
+</footer>
+
+<!-- ==========================
+     JS GLOBAL
+========================== -->
+<script src="/script.js"></script>
+
+</body>
+</html>

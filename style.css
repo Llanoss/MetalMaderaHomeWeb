@@ -1,0 +1,1336 @@
+/* ===============================================================
+                         GLOBAL CSS
+================================================================== */
+
+/* ==========================
+   RESET Y BASE
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+}
+
+/* ==========================
+   SISTEMA TIPOGRÁFICO GLOBAL
+========================== */
+h1 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+p,
+span {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================
+   SECCIONES (RESPETAN GLOBAL)
+========================== */
+.section .title {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section .subtitle {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 32px;
+    color: #000000;
+}
+
+/* Ajuste fino de títulos de sección en móvil */
+@media (max-width: 768px) {
+  .section {
+    margin-top: -20px; /* sube todo el bloque */
+  }
+
+  .section .subtitle {
+    margin-bottom: 20px; /* menos aire en móvil */
+  }
+}
+
+/* TÍTULO PRINCIPAL */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    /* TÍTULOS DE SECCIÓN */
+    h2 {
+        font-size: 1.2rem;
+    }
+
+/* ===================================
+   TÍTULOS Y TEXTOS – MÓVIL
+====================================== */
+@media (max-width: 768px) {
+
+  /* Títulos principales */
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    padding-inline: 18px;
+  }
+
+  /* Títulos de sección */
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  /* Subtítulos / párrafos destacados */
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-inline: 30px;
+  }
+
+}
+
+/* ==========================
+   BOTONES GLOBALES
+========================== */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 38px;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* ==========================
+   HEADER GLOBAL
+========================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.site-navbar {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+/* Botón menú */
+.site-menu-toggle {
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+    transition: all 0.3s ease;
+    
+}
+
+/* Logo */
+.site-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+}
+
+.site-logo a {
+    display: inline-block;
+}
+
+.site-logo img {
+    height: 120px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Espaciador */
+.site-spacer {
+    width: 1px;
+}
+
+/* ===== ESTADO DELGADO ===== */
+.site-header.shrink .site-logo img {
+    height: 70px;
+}
+
+.site-header.shrink .site-menu-toggle {
+    font-size: 1.2rem;
+    padding: 6px;
+}
+
+/* Header responsive */
+@media (max-width: 768px) {
+    .site-navbar {
+        max-width: 360px;
+    }
+
+    .site-logo {
+        margin-left: -30px;
+    }
+
+    .site-logo img {
+        height: 100px;
+    }
+
+    .site-header.shrink .site-logo img {
+        height: 60px;
+    }
+}
+
+/* ==========================
+   OVERLAY GLOBAL
+========================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+    pointer-events: none; /* desactiva interacción cuando está oculto */
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* activa interacción cuando se muestra */
+}
+
+/* ==========================
+   MENÚ LATERAL GLOBAL
+========================== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: #000000;
+    padding: 25px;
+    color: #ffffff;
+    z-index: 1000;
+    
+    /* NUEVO: usa transform para mover fuera de pantalla */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    pointer-events: none; /* desactiva interacción cuando está cerrado */
+}
+
+.side-menu.show {
+    transform: translateX(0); /* aparece en pantalla */
+    pointer-events: auto;     /* activa interacción */
+}
+
+.side-menu-secondary {
+    z-index: 1100;
+}
+
+.close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Links menú */
+.side-menu-links {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu-links li:first-child {
+    margin-top: 30px;
+}
+
+.side-menu-links a,
+.side-menu-links button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.side-menu-links a:hover,
+.side-menu-links button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.side-menu-links a:focus,
+.side-menu-links button:focus {
+    outline: none;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: #686868;
+}
+
+.submenu-btn {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.submenu-btn .arrow {
+  position: absolute;
+  right: 20px;   /* qué tan pegado al borde */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ==========================
+   REDES MENÚ LATERAL - PRIMER MENÚ
+========================== */
+.menu-social-logos, 
+.side-menu > .social-logos {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    gap: 15px;               /* espacio entre logos */
+    margin-top: 50px;        /* separa del resto del menú */
+    align-items: center;     /* centra verticalmente */
+}
+
+/* Tamaño logos desktop */
+.menu-social-logos img,
+.side-menu > .social-logos img {
+    width: 40px;   /* tamaño default en desktop */
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto hover */
+.menu-social-logos img:hover,
+.side-menu > .social-logos img:hover {
+    transform: scale(1.1);  /* pequeño aumento al pasar el mouse */
+}
+
+/* Tamaño logos en móvil */
+@media (max-width: 768px) {
+    .menu-social-logos img,
+    .side-menu > .social-logos img {
+        width: 35px;  /* tamaño reducido en móvil */
+    }
+
+    .menu-social-logos,
+    .side-menu > .social-logos {
+        margin-top: 30px; /* menos espacio arriba en móvil */
+    }
+}
+
+@media (max-width: 768px) {
+  .side-menu-links a,
+  .side-menu-links button {
+    font-size: 1.1rem;   /* más pequeño */
+    padding: 18px;       /* también reduce el alto */
+  }
+}
+
+/* ==========================
+   FOOTER GLOBAL
+========================== */
+.footer {
+    background: #000000;
+    color: #ffffff;
+    padding: 50px 20px 20px;
+    width: 100%;
+    overflow-x: hidden;
+
+    position: relative; /* importante para z-index */
+    z-index: 950;       /* sobre overlay (900), debajo del menú lateral (1000) */
+    opacity: 1;         
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Footer logo */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo img {
+    max-width: 140px;
+}
+
+/* Footer links */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #f3c623;
+}
+
+/* Línea separadora footer */
+.footer-separator {
+    width: 100%;
+    height: 0.1px;
+    background-color: rgb(167, 167, 167);
+    margin: 25px 0;
+}
+
+/* Pagos */
+.footer-payments {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-payments img {
+    height: 40px;
+}
+
+/* Footer bottom */
+.footer-bottom p,
+.footer-bottom span {
+    text-align: center;
+    font-size: 0.7rem !important;  /* más pequeño que antes */
+    margin: 15px 0 10px; /* ajusta el margen si quieres menos espacio */
+    color: #ffffff;      /* opcional: mantener color blanco */
+}
+
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-top: -40px;
+        margin-bottom: -40px;
+    }
+}
+
+/* ===============================================================
+                         INICIO CSS
+================================================================== */
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* Overlay oscuro */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+/* Contenido hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    margin-bottom: 20px;
+    text-shadow: 0 6px 25px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    margin-bottom: 30px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+/* ===== CATEGORÍAS ===== */
+.categories {
+    padding: 80px 6%;
+}
+
+.categories h2 {
+    margin-bottom: 50px;
+}
+
+/* ===== CARRUSEL ===== */
+.carousel-wrapper {
+    position: relative;
+}
+
+.categories-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    cursor: grab;
+}
+
+.categories-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.categories-carousel img,
+.categories-carousel a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ===== TARJETAS ===== */
+.category-card {
+    min-width: 360px;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.category-card span {
+    padding: 16px 0;
+    text-align: center;
+}
+
+/* ===== DIFUMINADOS CARRUSEL ===== */
+.fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+}
+
+.fade-left {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.fade-right {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+/* ===== INDICADOR ===== */
+.carousel-indicator {
+    margin-top: 18px;
+    height: 4px;
+    background: #ddd;
+}
+
+.indicator-thumb {
+    height: 100%;
+    width: 80px;
+    background: #000;
+}
+
+/* ===== SECCIÓN DESTACADA (CARRUSEL + TEXTO) ===== */
+.highlight-section {
+    display: flex;
+    justify-content: center;
+    padding: 10px 6%;
+    background: #ffffff;
+}
+
+.highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px;
+    width: 100%;
+    background: #fff;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* TEXTO */
+.highlight-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.highlight-text p {
+    max-width: 480px;
+}
+
+/* CARRUSEL */
+.highlight-carousel {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.highlight-slides {
+    display: flex;
+    width: 400%;
+    animation: highlightSlide 10s infinite;
+}
+
+.highlight-slides img {
+    width: 25%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* ANIMACIÓN */
+@keyframes highlightSlide {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-25%); }
+    50%, 70% { transform: translateX(-50%); }
+    75%, 95% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+/* ===== TEXTO CENTRAL ===== */
+.home-text {
+    padding: 50px 6% 0px 6%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.home-text h2,
+.home-text p {
+    max-width: 720px;
+}
+
+/* HERO DELGADO (hereda todo del hero normal) */
+.hero.hero-thin {
+    min-height: 40vh; /* más delgado que el hero normal */
+}
+
+/* =========================
+   FAQ PROFESIONAL
+========================= */
+.faq-section {
+    padding: 60px 6%;
+    background: #fff;
+}
+
+.faq-title {
+    
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 18px 20px;
+    font-weight: 500;
+    font-size: 1rem; /* usa global */
+    line-height: 1.6; /* usa global */
+}
+
+.faq-question:hover {
+    background: #f5f5f5;
+}
+
+/* Flecha hueca */
+.faq-arrow {
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.faq-item.open .faq-arrow {
+    transform: rotate(135deg); /* flecha hacia arriba */
+}
+
+.faq-answer {
+    max-height: 0;
+    padding: 0 20px;
+    font-size: 1rem; /* usa global */
+    line-height: 1.6; /* usa global */
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    overflow: hidden;
+    background: #fff;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px; 
+    padding: 15px 20px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .categories h2 {
+        margin-bottom: 35px;
+    }
+
+    .category-card {
+        min-width: 260px;
+    }
+
+    .category-card img {
+        height: 200px;
+    }
+    
+}
+
+@media (max-width: 900px) {
+
+    .highlight-card {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .highlight-slides img {
+        height: 340px;
+    }
+
+    .highlight-text {
+        text-align: center;
+        align-items: center;
+    }
+
+    .highlight-text p {
+        max-width: 100%;
+    }
+}
+
+/* ===============================================================
+                         COLECCIONES CSS
+================================================================== */
+
+/* Evita que el header fijo tape el contenido */
+main {
+  padding-top: 140px; /* altura del header */
+  padding-bottom: 40px; /* aire antes del footer */
+}
+/* Grid de tarjetas (SIEMPRE 2 columnas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 10px 30px;
+}
+
+/* Tarjetas */
+.card {
+  background: #000000;
+  border: 4px solid #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Imagen */
+.thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumb img:hover {
+  transform: scale(1.05);
+}
+
+/* Cuerpo */
+.body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.body .name {
+  font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+}
+
+.body .price {
+  font-size: clamp(0.8rem, 3vw, 1.2rem); /* más grande */
+  font-weight: 800;
+  color: #ffd54b;
+  text-align: center;
+  white-space: nowrap;   /* no se parte en dos líneas */
+  padding: 6px 0;        /* aire arriba y abajo */
+}
+
+
+/* Link ocupa toda la tarjeta */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .thumb img:hover {
+    transform: none;
+  }
+}
+
+/* ===============================================================
+                         NOSOTROS CSS
+================================================================== */
+
+/* ==========================
+   CARRUSEL
+========================== */
+.carrusel {
+  padding: 40px 0;           /* espacio arriba y abajo */
+  background-color: transparent; /* que tome el fondo global */
+}
+
+.carousel-slider {
+  position: relative;
+  max-width: 520px;           /* ancho fijo para que no toque los bordes */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;        /* bordes redondeados */
+  background-color: transparent;     /* opcional: si quieres resaltar la imagen como “tarjeta” */
+}
+
+/* Slides */
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: 320px;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+/* Imagen dentro del slide */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* ==========================
+   CONTROLES DEL CARRUSEL
+========================== */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+/* Flechas */
+.carousel-prev,
+.carousel-next {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: #838383;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  background: #838383;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: #cca700;
+}
+
+/* ====== EVITAR AZUL EN CARRUSEL ====== */
+.carrusel,
+.carrusel * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carrusel img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.carrusel button:focus,
+.carrusel button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ==========================
+   VALORES y VISIÓN
+========================== */
+.valores,
+.mision-vision {
+  padding: 15px 0;      /* espacio arriba y abajo como .lema */
+}
+
+/* ==========================
+   LEMA
+========================== */
+.lema {
+  padding: 20px 0;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .carousel-slider {
+    max-width: 80%;
+  }
+
+  .carousel-slide {
+    height: 240px;  /* altura proporcional en móviles */
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    font-size: 32px;
+  }
+}
+
+/* ===============================================================
+                         CONTACTO CSS
+================================================================== */
+
+.contact-section {
+  padding: 10px 0; /* espacio arriba y abajo */
+}
+
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;           /* espacio entre elementos */
+  max-width: 720px;    /* igual que historia y valores */
+  margin: 0 auto;      /* centrado horizontal */
+}
+
+.contact-info .map {
+  margin-top: 30px;
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    padding: 0 25px; /* espacio lateral en móvil */
+  }
+
+  .contact-info p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/* ===============================================================
+                         PRODUCTOS CSS
+================================================================== */
+
+.main-image-container {
+  margin-top: 0px;
+}
+
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+.detalle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ==========================
+   GALERÍA
+========================== */
+.galeria {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+/* Imagen principal */
+.main-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* siempre cuadrado */
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image-container img.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* llena el cuadro */
+}
+
+/* Miniaturas */
+.thumbnails-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  
+}
+
+.thumbnails-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.thumbnails-container img.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+  
+}
+
+.thumbnails-container img.thumbnail.active,
+.thumbnails-container img.thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ==========================
+   MODAL ZOOM
+========================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* ==========================
+   INFO
+========================== */
+.info {
+  flex: 1 1 40%;
+  
+}
+
+.info h2 {
+  margin-bottom: 10px;
+  margin: 2px 0;
+  margin-top: 5px;
+}
+
+.info .precio {
+  margin-bottom: 15px;
+}
+
+.info .descripcion {
+  margin-top: 40px;
+  margin-bottom: -25px;
+  text-align: center;
+  
+}
+
+/* Botón comprar */
+.btn-comprar {
+  display: block;
+  background: #27ae60;
+  color: #fff;
+  padding: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+@keyframes compraJump {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.btn-comprar {
+  animation: compraJump 1s infinite;
+}
+
+
+/* SOLO carrusel de productos */
+.carrusel-producto {
+  margin-top: -50px;
+  padding-top: 0;
+}
+
+
+/* ==========================
+   GARANTÍA
+========================== */
+.garantia {
+  background: #111;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.garantia h2 {
+  margin-bottom: 30px;
+}
+
+/* ==========================
+   CONTENEDOR MEDIR DIMENSIÓN
+========================== */
+.medir-talla-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: rgba(255, 240, 226, 0.95);
+  padding: 60px 20px;
+  margin: 50px auto 0;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.medir-talla-info {
+  flex: 1;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.medir-talla-info h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.medir-talla-info p {
+  margin-bottom: 10px;
+}
+
+.medir-talla-img {
+  flex: 1;
+  max-width: 500px;
+}
+
+.medir-talla-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .detalle-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .medir-talla-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .medir-talla-img {
+    order: -1;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-image-container {
+    margin-top: -40px;
+  }
+  
+  .carrusel-producto {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+}
